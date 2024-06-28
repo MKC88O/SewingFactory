@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace SewingFactory
 {
-    class Program
+    internal class Program
     {
          static void Main(string[] args)
         {
