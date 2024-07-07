@@ -8,13 +8,16 @@ namespace SewingFactory
 {
     internal class Seamstress : Employee
     {
-        readonly Dictionary<Model, List<int>> models = [];
-        public Seamstress() : this("name", 0) { }
+        public readonly Dictionary<Model, List<int>> models = [];
+        public Seamstress() : this("name", 0, "position") { }
 
-        public Seamstress(string? name, int id)
+        public Seamstress(string? name, int id) : this(name, id, "Швея") { }
+
+        public Seamstress(string? name, int id, string position)
         {
             SetName(name);
             SetID(id);
+            SetPosition(position);
         }
 
         public void AddModel(Model model, List<int> quantity)
@@ -40,7 +43,7 @@ namespace SewingFactory
 
         public override string ToString()
         {
-            string? strings = "Имя: " + name + " ID: " + id + "\n\n";
+            string? strings = name + " ID: " + id + " " + position + "\n\n";
             foreach (var current in models)
             {
                 strings += "\tМодель: " + current.Key.GetModelName() + "\n";

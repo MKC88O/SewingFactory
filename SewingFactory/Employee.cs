@@ -10,13 +10,17 @@ namespace SewingFactory
     {
         protected string? name;
         protected int id;
+        protected string? position;
 
-        public Employee() : this("name", 0) { }
+        public Employee() : this("name", 0, "position") { }
 
-        public Employee(string? name, int id)
+        public Employee(string? name, int id) : this(name, id, "position") { }
+
+        public Employee(string? name, int id, string position)
         {
             SetName(name);
             SetID(id);
+            SetPosition(position);
         }
 
         public virtual double CalculateSalary()
@@ -34,6 +38,11 @@ namespace SewingFactory
             this.id = id;
         }
 
+        public void SetPosition(string? position)
+        {
+            this.position = position;
+        }
+
         public string? GetName()
         {
             return name;
@@ -44,6 +53,11 @@ namespace SewingFactory
             return id;
         }
 
-        public virtual void Print() { }
+        public string? GetPosition()
+        {
+            return position;
+        }
+
+        //public virtual void Print() { }
     };
 }

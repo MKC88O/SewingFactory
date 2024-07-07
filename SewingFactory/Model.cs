@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
 namespace SewingFactory
 {
     internal class Model
     {
 
-        public string? modelName;
-        public double priceForUnit = 0;
+        protected string? modelName;
+        protected double priceForUnit = 0;
 
         public Model() : this("modelName", 0) { }
 
